@@ -293,9 +293,9 @@ STORAGES = {
 # -------------------------------------------------------------------------------
 
 RESEND_API_KEY     = config("RESEND_API_KEY", default="")
-DEFAULT_FROM_EMAIL = config("DEFAULT_FROM_EMAIL", default="Medilink <onboarding@resend.dev>")
-SERVER_EMAIL       = DEFAULT_FROM_EMAIL   # used for error emails to ADMINS
-FRONTEND_URL       = config("FRONTEND_URL", default="http://localhost:3000")
+DEFAULT_EMAIL = config("DEFAULT_EMAIL", default="Medilink <onboarding@resend.dev>")
+SERVER_EMAIL       = DEFAULT_EMAIL   # used for error emails to ADMINS
+FRONTEND       = config("FRONTEND_URL", default="http://localhost:3000")
 
 # Switch backends per environment so local dev never hits Resend.
 # Set EMAIL_BACKEND=django.core.mail.backends.console.EmailBackend in .env
@@ -410,6 +410,6 @@ if DEBUG:
     print(f"🔧 Mode:       DEVELOPMENT")
     print(f"🗄️  Database:   {'PostgreSQL' if DATABASE_URL else 'SQLite'}")
     print(f"☁️  Cloudinary: {'Enabled' if USE_CLOUDINARY else 'Disabled'}")
-    print(f"📧 From email: {DEFAULT_FROM_EMAIL}")
-    print(f"🌐 Frontend:   {FRONTEND_URL}")
+    print(f"📧 From email: {DEFAULT_EMAIL}")
+    print(f"🌐 Frontend:   {FRONTEND}")
     print(f"{'='*50}\n")
